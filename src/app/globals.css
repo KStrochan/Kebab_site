@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #3a2418;
+  --bg-deep: #2a1910;
+  --card: #4a2f20;
+  --gold: #e8c98a;
+  --gold-dim: #b99a5f;
+  --line: rgba(232, 201, 138, 0.35);
+  --text: #f4e8d0;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-deep: var(--bg-deep);
+  --color-card: var(--card);
+  --color-gold: var(--gold);
+  --color-gold-dim: var(--gold-dim);
+  --color-line: var(--line);
+  --color-text: var(--text);
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-heading);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading), Georgia, serif;
+}
