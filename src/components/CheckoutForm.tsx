@@ -271,7 +271,7 @@ export function CheckoutForm({ onSuccess }: { onSuccess: (orderId: string) => vo
       <button
         type="submit"
         disabled={!totals || submitting}
-        className="min-h-14 w-full rounded-full bg-gold font-semibold text-bg-deep transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold disabled:cursor-not-allowed disabled:opacity-50"
+        className="btn-gold min-h-14 w-full rounded-full text-base font-semibold tracking-wide focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold disabled:cursor-not-allowed disabled:opacity-50"
       >
         {submitting ? "Надсилаємо…" : "Надіслати замовлення"}
       </button>

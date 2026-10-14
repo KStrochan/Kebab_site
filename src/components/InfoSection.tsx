@@ -1,4 +1,5 @@
-import { Ornament } from "./Ornament";
+import { Reveal } from "./Reveal";
+import { SectionTitle } from "./SectionTitle";
 
 const MAP_URL =
   "https://www.google.com/maps/search/?api=1&query=" +
@@ -12,44 +13,51 @@ const HOURS = [
 
 export function InfoSection() {
   return (
-    <section id="info" className="bg-bg-deep px-4 pb-32 pt-16">
-      <div className="mx-auto max-w-3xl text-center">
-        <h2 className="text-3xl text-gold">Як нас знайти</h2>
-        <Ornament className="mt-4" />
-        <div className="mt-10 grid gap-10 sm:grid-cols-2 sm:text-left">
-          <div>
-            <h3 className="text-xl text-gold">Графік роботи</h3>
-            <dl className="mt-4 space-y-2">
-              {HOURS.map(([days, time]) => (
-                <div key={days} className="flex justify-between gap-4 border-b border-line pb-2">
-                  <dt className="text-text/80">{days}</dt>
-                  <dd className="font-medium">{time}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-          <div>
-            <h3 className="text-xl text-gold">Контакти</h3>
-            <p className="mt-4">м. Стрий, вул. Бобикевича 11/1</p>
-            <p className="mt-2">
+    <section id="info" className="grain relative isolate overflow-hidden bg-bg-deep px-4 pb-32 pt-20">
+      <div className="mx-auto max-w-3xl">
+        <Reveal>
+          <SectionTitle kicker="Графік і контакти">Як нас знайти</SectionTitle>
+        </Reveal>
+        <div className="mt-12 grid gap-5 sm:grid-cols-2">
+          <Reveal className="flex">
+            <div className="card-gold w-full p-6">
+              <h3 className="text-2xl text-gold">Графік роботи</h3>
+              <dl className="mt-5 space-y-3">
+                {HOURS.map(([days, time]) => (
+                  <div key={days} className="flex justify-between gap-4 border-b border-line pb-3">
+                    <dt className="text-text/80">{days}</dt>
+                    <dd className="font-medium tabular-nums">{time}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </Reveal>
+          <Reveal delay={90} className="flex">
+            <div className="card-gold w-full p-6">
+              <h3 className="text-2xl text-gold">Контакти</h3>
+              <p className="mt-5">м. Стрий, вул. Бобикевича 11/1</p>
               <a
                 href="tel:+380730888087"
-                className="inline-flex min-h-11 items-center text-lg text-gold underline-offset-4 hover:underline"
+                className="mt-1 inline-flex min-h-11 items-center text-xl text-gold underline-offset-4 hover:underline"
               >
                 0 (73) 088 80 87
               </a>
-            </p>
-            <a
-              href={MAP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 inline-block rounded-full border border-gold px-6 py-2.5 text-gold transition hover:bg-gold hover:text-bg-deep"
-            >
-              Показати на карті
-            </a>
-          </div>
+              <div>
+                <a
+                  href={MAP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-ghost mt-3 inline-flex min-h-12 items-center rounded-full px-7"
+                >
+                  Показати на карті
+                </a>
+              </div>
+            </div>
+          </Reveal>
         </div>
-        <p className="mt-14 text-sm text-text/50">© Kebab Bro, Стрий</p>
+        <p className="mt-16 text-center text-xs uppercase tracking-[0.3em] text-text/40">
+          © Kebab Bro · Стрий
+        </p>
       </div>
     </section>
   );

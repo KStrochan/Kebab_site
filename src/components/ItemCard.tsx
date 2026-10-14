@@ -25,8 +25,8 @@ export function ItemCard({ item }: { item: MenuItem }) {
   };
 
   return (
-    <article className="flex flex-col rounded-xl border border-line bg-card p-5">
-      <h4 className="text-xl text-gold">{item.name}</h4>
+    <article className="card-gold flex w-full flex-col p-5 pb-6">
+      <h4 className="font-serif text-2xl leading-snug text-gold">{item.name}</h4>
       {item.description && (
         <p className="mt-2 text-sm leading-relaxed text-text/70">{item.description}</p>
       )}
@@ -77,13 +77,15 @@ export function ItemCard({ item }: { item: MenuItem }) {
       )}
 
       <div className="mt-auto flex items-center justify-between pt-5">
-        <span className="text-2xl text-gold">
-          <span data-testid="price">{price ?? ""}</span> грн
+        <span className="font-serif text-3xl tabular-nums text-gold">
+          <span data-testid="price">{price ?? ""}</span>
+          <span className="ml-1 font-sans text-sm text-gold-dim">грн</span>
         </span>
         <button
           type="button"
           onClick={onAdd}
-          className="min-h-12 rounded-full bg-gold px-7 font-semibold text-bg-deep transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+          data-added={justAdded}
+          className="btn-gold min-h-12 rounded-full px-7 font-semibold focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
         >
           {justAdded ? "Додано ✓" : "Додати"}
         </button>

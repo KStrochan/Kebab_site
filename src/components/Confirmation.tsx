@@ -14,19 +14,32 @@ export function Confirmation({ orderId, onClose }: { orderId: string; onClose: (
 
   return (
     <div className="py-10 text-center">
-      <h3 ref={headingRef} tabIndex={-1} className="text-2xl text-gold outline-none">
+      <svg
+        viewBox="0 0 64 64"
+        className="mx-auto h-20 w-20"
+        fill="none"
+        stroke="var(--gold)"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <circle cx="32" cy="32" r="28" className="check-ring" />
+        <path d="M20 33l8 8 16-17" className="check-draw" />
+      </svg>
+      <h3 ref={headingRef} tabIndex={-1} className="text-gold-gradient mt-6 text-3xl outline-none">
         Дякуємо за замовлення!
       </h3>
       <Ornament className="mt-4" />
       <p className="mt-6 text-text/80">Номер вашого замовлення</p>
-      <p className="mt-1 text-3xl tracking-widest text-gold">{orderId}</p>
+      <p className="mt-1 font-serif text-4xl tracking-widest text-gold">{orderId}</p>
       <p className="mx-auto mt-6 max-w-xs text-sm text-text/70">
         Ми вже отримали його й зателефонуємо, якщо потрібно щось уточнити. Оплата при отриманні.
       </p>
       <button
         type="button"
         onClick={onClose}
-        className="mt-8 rounded-full border border-gold px-8 py-2.5 text-gold transition hover:bg-gold hover:text-bg-deep"
+        className="btn-ghost mt-8 min-h-12 rounded-full px-10"
       >
         Закрити
       </button>
