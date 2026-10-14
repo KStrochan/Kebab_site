@@ -75,16 +75,20 @@ export function CartDrawer() {
 
   return (
     <div className="fixed inset-0 z-40 flex justify-end">
-      <div className="absolute inset-0 bg-black/60" onClick={close} aria-hidden="true" />
+      <div
+        className="drawer-backdrop absolute inset-0 bg-black/60 backdrop-blur-sm"
+        onClick={close}
+        aria-hidden="true"
+      />
       <aside
         ref={panelRef}
         role="dialog"
         aria-modal="true"
         aria-label="Кошик"
-        className="relative flex h-dvh w-full max-w-md flex-col overflow-y-auto overscroll-contain border-l border-line bg-bg px-5 pt-5"
+        className="drawer-panel relative flex h-dvh w-full max-w-md flex-col overflow-y-auto overscroll-contain border-l border-line bg-gradient-to-b from-[#432a1d] to-bg px-5 pt-5 shadow-[-30px_0_60px_-20px_rgba(0,0,0,0.7)]"
       >
         <div className="flex items-center justify-between">
-          <h2 className="text-2xl text-gold">Ваше замовлення</h2>
+          <h2 className="text-gold-gradient text-3xl">Ваше замовлення</h2>
           <button
             ref={closeRef}
             type="button"
