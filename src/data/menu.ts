@@ -1,4 +1,5 @@
-export type CategoryId = "shawarma" | "hotdogs" | "burgers" | "snacks" | "drinks";
+export type CategoryId =
+  "shawarma" | "hotdogs" | "burgers" | "snacks" | "drinks";
 
 export type Variant = { id: string; label: string; price: number };
 
@@ -50,14 +51,16 @@ export const MENU: MenuItem[] = [
     id: "shawarma-classic",
     category: "shawarma",
     name: "Класична",
-    description: 'Лаваш "durum", часниковий соус, кетчуп, овочі, м\'ясо на вибір',
+    description:
+      'Лаваш "durum", часниковий соус, кетчуп, овочі, м\'ясо на вибір',
     variants: meat(149, 209, 229),
   },
   {
     id: "shawarma-cheese",
     category: "shawarma",
     name: "Сирна",
-    description: 'Лаваш "durum", сир, часниковий соус, кетчуп, овочі, м\'ясо на вибір',
+    description:
+      'Лаваш "durum", сир, часниковий соус, кетчуп, овочі, м\'ясо на вибір',
     variants: meat(179, 219, 259),
   },
   {
@@ -127,6 +130,17 @@ export const MENU: MenuItem[] = [
     description:
       "Підсмажена до скоринки булочка бріош, часниковий соус, кетчуп, айсберг, м'ясо, маринований огірок та цибуля, цибуля кріспі",
     variants: bunOrLavash(139, 199),
+  },
+  {
+    id: "hotdog-bro-pork",
+    category: "hotdogs",
+    name: "Хот-Бро зі свининою",
+    description:
+      "Підсмажена до скоринки булочка бріош, часниковий соус, кетчуп, айсберг, маринована свинина, маринований огірок та цибуля, помідор, цибуля кріспі",
+    variants: [
+      { id: "single", label: "Звичайний", price: 169 },
+      { id: "double", label: "Подвійний", price: 189 },
+    ],
   },
   {
     id: "hotdog-lavash",
@@ -200,6 +214,22 @@ export const MENU: MenuItem[] = [
       "Булочка бріош, новий пікантний соус з релішом, аж 6 слайсів чеддеру, 3 smash-котлети з яловичини, карамелізована цибуля, мариновані огірочки",
     price: 259,
   },
+  {
+    id: "burger-chicken-bro",
+    category: "burgers",
+    name: "Chicken Bro",
+    description:
+      "Булочка бріош, куряча котлета з натурального фаршу в клярі, сир чеддер, органічний томатний соус, салат айсберг, помідор, маринований огірок",
+    price: 130,
+  },
+  {
+    id: "burger-spicy-chicken-bro",
+    category: "burgers",
+    name: "Spicy Chicken Bro",
+    description:
+      "Булочка бріош, куряча котлета з натурального фаршу в клярі, сир чеддер, spicy соус, салат айсберг, помідор, маринований огірок та цибуля",
+    price: 148,
+  },
 
   {
     id: "snack-wings-cheese",
@@ -217,14 +247,158 @@ export const MENU: MenuItem[] = [
     name: "Картопляні діпи під сирним соусом з беконом",
     price: 144,
   },
+  {
+    id: "snack-wings-fry",
+    category: "snacks",
+    name: "Курячі крильця",
+    description: "Подаються з соусом",
+    variants: [
+      { id: "6", label: "6 шт", price: 139 },
+      { id: "9", label: "9 шт", price: 189 },
+    ],
+  },
+  {
+    id: "snack-wings-garlic",
+    category: "snacks",
+    name: "Курячі крильця з часником та пармезаном",
+    variants: [
+      { id: "6", label: "6 шт", price: 159 },
+      { id: "9", label: "9 шт", price: 209 },
+    ],
+  },
+  {
+    id: "snack-nuggets",
+    category: "snacks",
+    name: "Нагетси",
+    description: "Кисло-солодкий соус",
+    variants: [
+      { id: "6", label: "6 шт", price: 95 },
+      { id: "9", label: "9 шт", price: 125 },
+    ],
+  },
+  {
+    id: "snack-cheese-sticks",
+    category: "snacks",
+    name: "Сирні палички, 8 шт",
+    description: "Соус з журавлини",
+    price: 194,
+  },
+  {
+    id: "snack-fries",
+    category: "snacks",
+    name: "Картопля фрі",
+    description: "Подається з соусом",
+    price: 79,
+  },
+  {
+    id: "snack-fries-parmesan",
+    category: "snacks",
+    name: "Картопля фрі з пармезаном",
+    description: "Подається з сирним соусом",
+    price: 134,
+  },
+  {
+    id: "snack-potato-rosemary",
+    category: "snacks",
+    name: "Картопля з розмарином та часником",
+    description: "Подається з соусом",
+    price: 84,
+  },
+  {
+    id: "snack-potato-balls",
+    category: "snacks",
+    name: "Картопляні кульки",
+    description: "Подаються з соусом",
+    price: 84,
+  },
+  {
+    id: "snack-dips",
+    category: "snacks",
+    name: "Картопляні діпи",
+    description: "Подаються з соусом",
+    price: 84,
+  },
+  {
+    id: "snack-lavash-chips",
+    category: "snacks",
+    name: "Чіпси з лавашу",
+    description: "Подаються з соусом",
+    price: 55,
+  },
+  {
+    id: "snack-onion-rings",
+    category: "snacks",
+    name: "Цибулеві кільця, 10 шт",
+    description: "Подаються з соусом",
+    price: 139,
+  },
 
-  { id: "drink-cola-05", category: "drinks", name: "Coca-Cola / Fanta / Sprite 0,5 л", price: 49 },
-  { id: "drink-rich-05", category: "drinks", name: "Сік Rich 0,5 л", price: 50 },
-  { id: "drink-rich-02", category: "drinks", name: "Сік Rich 0,2 л", price: 30 },
-  { id: "drink-capri-02", category: "drinks", name: "Capri-Sun 0,2 л", price: 35 },
+  {
+    id: "drink-iced-latte",
+    category: "drinks",
+    name: "Iced latte",
+    variants: [
+      { id: "caramel", label: "Карамельне", price: 85 },
+      { id: "hazelnut", label: "Горіхове", price: 85 },
+      { id: "vanilla", label: "Ванільне", price: 85 },
+      { id: "cherry", label: "Вишневе", price: 85 },
+      { id: "almond", label: "Мигдальне", price: 85 },
+      { id: "watermelon", label: "Кавун", price: 85 },
+    ],
+  },
+  {
+    id: "drink-lemonade",
+    category: "drinks",
+    name: "Лимонад",
+    variants: [
+      { id: "cherry", label: "Вишневий", price: 85 },
+      { id: "apple", label: "Яблучний", price: 85 },
+      { id: "raspberry", label: "Малиновий", price: 85 },
+      { id: "forest-berries", label: "Лісові ягоди", price: 85 },
+      { id: "barberry", label: "Барбарис", price: 85 },
+      { id: "pear", label: "Груша", price: 85 },
+      { id: "strawberry", label: "Полуниця", price: 85 },
+      { id: "watermelon", label: "Кавун", price: 85 },
+      { id: "mojito", label: "Мохіто класичне", price: 85 },
+    ],
+  },
+  {
+    id: "drink-cola-05",
+    category: "drinks",
+    name: "Coca-Cola / Fanta / Sprite 0,5 л",
+    price: 49,
+  },
+  {
+    id: "drink-rich-05",
+    category: "drinks",
+    name: "Сік Rich 0,5 л",
+    price: 50,
+  },
+  {
+    id: "drink-rich-02",
+    category: "drinks",
+    name: "Сік Rich 0,2 л",
+    price: 30,
+  },
+  {
+    id: "drink-capri-02",
+    category: "drinks",
+    name: "Capri-Sun 0,2 л",
+    price: 35,
+  },
   { id: "drink-ayran-02", category: "drinks", name: "Айран 0,2 л", price: 39 },
-  { id: "drink-bonaqua-05", category: "drinks", name: "Мінеральна вода Бонаква 0,5 л", price: 30 },
-  { id: "drink-can-033", category: "drinks", name: "Schweppes / Coca-Cola (банка 0,33 л)", price: 49 },
+  {
+    id: "drink-bonaqua-05",
+    category: "drinks",
+    name: "Мінеральна вода Бонаква 0,5 л",
+    price: 30,
+  },
+  {
+    id: "drink-can-033",
+    category: "drinks",
+    name: "Schweppes / Coca-Cola (банка 0,33 л)",
+    price: 49,
+  },
 ];
 
 const FOOD: CategoryId[] = ["shawarma", "hotdogs", "burgers"];
@@ -237,10 +411,25 @@ export const ADDONS: Addon[] = [
   { id: "dorblu", label: "Сир дорблю", price: 40, categories: FOOD },
   { id: "patty-100", label: "Котлета 100 г", price: 60, categories: FOOD },
   { id: "patty-200", label: "Котлета 200 г", price: 90, categories: FOOD },
-  { id: "meat-chicken", label: "М'ясо 50 г, курка", price: 60, categories: FOOD },
-  { id: "meat-veal", label: "М'ясо 50 г, телятина", price: 90, categories: FOOD },
+  {
+    id: "meat-chicken",
+    label: "М'ясо 50 г, курка",
+    price: 60,
+    categories: FOOD,
+  },
+  {
+    id: "meat-veal",
+    label: "М'ясо 50 г, телятина",
+    price: 90,
+    categories: FOOD,
+  },
   { id: "sauce", label: "Соус", price: 30, categories: FOOD },
-  { id: "menu-plus", label: "Меню+ (картопля фрі, соус, напій)", price: 109, categories: FOOD },
+  {
+    id: "menu-plus",
+    label: "Меню+ (картопля фрі, соус, напій)",
+    price: 109,
+    categories: FOOD,
+  },
 ];
 
 export function findItem(id: string): MenuItem | undefined {
