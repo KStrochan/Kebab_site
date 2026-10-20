@@ -18,17 +18,28 @@ export function MenuSection() {
         </Reveal>
 
         {CATEGORIES.map((c) => (
-          <div key={c.id} id={`cat-${c.id}`} className="mt-14 scroll-mt-20 sm:mt-20">
+          <div
+            key={c.id}
+            id={`cat-${c.id}`}
+            className="mt-14 scroll-mt-20 sm:mt-20"
+          >
             <Reveal>
               <div className="mb-6 flex items-center gap-4">
                 <CategoryIcon id={c.id} />
                 <h3 className="text-3xl text-gold">{c.title}</h3>
-                <span className="h-px flex-1 bg-gradient-to-r from-gold/50 to-transparent" aria-hidden="true" />
+                <span
+                  className="line-grow h-px flex-1 bg-gradient-to-r from-gold/50 to-transparent"
+                  aria-hidden="true"
+                />
               </div>
             </Reveal>
             <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
               {MENU.filter((i) => i.category === c.id).map((item, index) => (
-                <Reveal key={item.id} delay={Math.min(index, 5) * 70} className="flex">
+                <Reveal
+                  key={item.id}
+                  delay={Math.min(index, 5) * 70}
+                  className="flex"
+                >
                   <ItemCard item={item} />
                 </Reveal>
               ))}
